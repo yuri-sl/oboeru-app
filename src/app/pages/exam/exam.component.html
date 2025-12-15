@@ -1,10 +1,22 @@
+<app-top-menu-bar></app-top-menu-bar>
 <p>exam works!</p>
-<h1>
-  {{ quizOptA.option_text }}
-</h1>
-<h1>{{ quiz_qt_one.question_title }}</h1>
-<ul>
-  @for(option of quiz_qt_one.options; track option.option_id){
-  <li>{{ option.option_text }}</li>
-  }
-</ul>
+<div class="exam">
+  <div class="question-box">
+    <h1>
+      {{ quizOptA.option_text }}
+    </h1>
+    <h1>{{ quiz_qt_one.question_title }}</h1>
+    <ul>
+      <div class="buttons-column">
+        @for(option of quiz_qt_one.options; track option.option_id){
+        <p-button label="{{ option.option_text }}"></p-button>
+        }
+      </div>
+    </ul>
+  </div>
+</div>
+<footer>
+  <div class="paginator">
+    <p-paginator [first]="first" [rows]="rows" [totalRecords]="120" />
+  </div>
+</footer>

@@ -2,13 +2,19 @@ import { Component } from '@angular/core';
 import type { Quiz } from '../../models/quiz.model';
 import type { QuizQuestion } from '../../models/quiz.model';
 import type { QuizOption } from '../../models/quiz.model';
+import { ButtonModule, Button } from 'primeng/button';
+import { ButtonGroupModule, ButtonGroup } from 'primeng/buttongroup';
+import { PaginatorModule } from 'primeng/paginator';
+import { TopMenuBarComponent } from '../../shared/components/top-menu-bar/top-menu-bar.component';
 @Component({
   selector: 'app-exam',
-  imports: [],
+  imports: [Button, PaginatorModule, TopMenuBarComponent],
   templateUrl: './exam.component.html',
   styleUrl: './exam.component.scss',
 })
 export class ExamComponent {
+  first: number = 0;
+  rows: number = 10;
   quizOptA: QuizOption = {
     option_id: 1,
     option_text: 'Teste de opção',
