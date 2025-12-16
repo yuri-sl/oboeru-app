@@ -1,5 +1,6 @@
 <app-top-menu-bar></app-top-menu-bar>
 <p>exam works!</p>
+<p-toast />
 <div class="exam">
   <div class="question-box">
     <h1>
@@ -9,7 +10,10 @@
     <ul>
       <div class="buttons-column">
         @for(option of quiz_qt_one.options; track option.option_id){
-        <p-button label="{{ option.option_text }}"></p-button>
+        <p-button
+          label="{{ option.option_text }}"
+          (click)="verify_answer(option)"
+        ></p-button>
         }
       </div>
     </ul>

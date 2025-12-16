@@ -11,6 +11,7 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import Material from '@primeuix/themes/material';
 import Lara from '@primeuix/themes/lara';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +26,6 @@ export const appConfig: ApplicationConfig = {
         },
       },
     }),
+    provideAnimations(),
   ],
 };
